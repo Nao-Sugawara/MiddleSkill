@@ -13,7 +13,6 @@ public class test1 {
 		List<String> strArray3 = new ArrayList<>();
 		List<String> strArray4 = new ArrayList<>();
 
-		// strArray1でfor文を回し3文字目(k)以降のものをstrArray2に格納する(1個目のfor文)
 		for (String s : strArray1) {
 			if (s.equals("k")) {
 				strArray2.add(s);
@@ -24,14 +23,12 @@ public class test1 {
 			strArray2.add(strArray1.get(i));
 		}
 
-		// strArray2でfor文を回しkとaとoの物だけでstrArray3に格納する(2個目のfor文)
 		for (String s : strArray2) {
 			if (s.equals("k") || s.equals("a") || s.equals("o")) {
 				strArray3.add(s);
 			}
 		}
 
-		// strArray3でfor文を回し「kakao」となるようにstrArray4に格納しstrArray4を出力する。(3個目のfor文)
 		for (int i = 0; i < strArray3.size(); i++) {
 			if (strArray3.get(i).equals("k") && i + 3 < strArray3.size() && strArray3.get(i + 1).equals("a")
 					&& strArray3.get(i + 2).equals("k") && strArray3.get(i + 3).equals("o")) {
@@ -39,7 +36,7 @@ public class test1 {
 			}
 		}
 
-		System.out.println(strArray4); // 出力結果: [k, a, k, a, o]
+		System.out.println(strArray4);
 
 	}
 }
