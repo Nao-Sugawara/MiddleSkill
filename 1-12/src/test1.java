@@ -12,26 +12,27 @@ public class test1 {
 		int y = 80;
 		int z = 15;
 
-		if (x > 0 && y > 0 && z > 0) {
-			if (x % 10 == 0) {
-				if (x + y + z == 100) {
-					System.out.println("プラス100：OK");
-				} else {
-					System.out.println("プラス100：NG");
-				}
-			} else {
-				System.out.println("10の倍数：NG");
-			}
-		} else {
-			System.out.println("正の整数：NG");
-		}
-		//改行
-		System.out.println("問２");
-		//問題2:問1と同じ内容で三項演算子で条件式を作成しなさい。最後に変数aを出力する。
 		String aa = "プラス100：OK";
 		String b = "プラス100：NG";
 		String c = "10の倍数：NG";
 		String d = "正の整数：NG";
+
+		if (x > 0 && y > 0 && z > 0) {
+			if (x % 10 == 0) {
+				if (x + y + z == 100) {
+					System.out.println(aa);
+				} else {
+					System.out.println(b);
+				}
+			} else {
+				System.out.println(c);
+			}
+		} else {
+			System.out.println(d);
+		}
+		//改行
+		System.out.println("問２");
+		//問題2:問1と同じ内容で三項演算子で条件式を作成しなさい。最後に変数aを出力する。
 
 		String a = (x > 0 && y > 0 && z > 0)
 				? (x % 10 == 0)
