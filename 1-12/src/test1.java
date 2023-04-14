@@ -28,12 +28,20 @@ public class test1 {
 		//改行
 		System.out.println("問２");
 		//問題2:問1と同じ内容で三項演算子で条件式を作成しなさい。最後に変数aを出力する。
-		String a = "プラス100：OK";
+		String aa = "プラス100：OK";
 		String b = "プラス100：NG";
+		String c = "10の倍数：NG";
+		String d = "正の整数：NG";
 
-		String str = x > 0 && y > 0 && z > 0 && x % 10 == 0 && x + y + z == 100 ? a : b;
-		System.out.println(str);
+		String a = (x > 0 && y > 0 && z > 0)
+				? (x % 10 == 0)
+						? (x + y + z == 100)
+								? aa
+								: b
+						: c
+				: d;
 
+		System.out.println(a);
 	}
 
 }
