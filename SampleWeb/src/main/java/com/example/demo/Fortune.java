@@ -1,0 +1,26 @@
+package com.example.demo;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+
+public class Fortune {
+
+	@RequestMapping("/fortune")
+	public String start() {
+		double fn = Math.random(); //0.01~1.0の乱数
+		if (fn >= 0.7) {
+			return "greatFortune.html";
+		} else if (fn >= 0.4) {
+			return "middleFortune.html";
+		} else if (fn >= 0.1) {
+			return "smallForturn.html";
+		} else {
+			return "misFortune.html";
+
+		}
+
+	}
+
+}
