@@ -1,0 +1,60 @@
+⚫️課題5-1～5-5
+
+【課題】
+①
+TemplateInputException
+NumberFormatException
+ClassCastException
+NullPointerException
+IndexOutOfBoundsException
+ArithmeticException
+
+6つのエラーが邪魔して機能していないのでCRAD機能とバリデーション、各画面遷移が
+正常に行えるようにしてください
+
+②TemplateInputExceptionの原因と原因箇所と修正内容を説明してください
+原因:テンプレート内の構文エラーが発生
+原因箇所：<head
+修正内容：タグを追加→<head>
+
+③NumberFormatExceptionの原因と原因箇所と修正内容を説明してください
+原因：Integer.parseInt(name)で文字列をInteger型にしようとした
+原因箇所：nteger.parseInt(name)
+修正内容：NumberFormatExceptionをtry,catchで対応出来る様に修正した
+
+④ClassCastExceptionの原因と原因箇所と修正内容を説明してください
+原因：String型のObjectをInteger型に設定していたから
+原因箇所：Integer logName = (Integer) name;
+修正内容：Integer型をString型に書き換えた
+
+⑤NullPointerExceptionの原因と原因箇所と修正内容を説明してください
+原因：nullのオブジェクトを返してしまったから
+原因箇所：userUpdateRequest = null;
+　　　　　return String.format("redirect:/user/%d", userUpdateRequest.getId());
+
+修正内容：下記の様に修正した
+
+Integer userId = userUpdateRequest.getId();
+userUpdateRequest = null;
+return String.format("redirect:/user/%d", userId);
+
+⑥IndexOutOfBoundsExceptionの原因と原因箇所と修正内容を説明してください
+@RequestMapping("/user/list")
+	public String displayList(Model model) {
+		List<UserEntity> userlist = userService.searchAll();
+		List<UserEntity> userlists = new ArrayList<UserEntity>();
+		for (int i = 0; i < userlist.size() - 1; i++) {
+修正内容：			👉userlists.add(userlist.get(1));
+		}
+
+原因箇所：userlist.getの引数
+原因：getの引数が-2でマイナス値となっていたため。
+
+
+
+⑦ArithmeticExceptionの原因と原因箇所と修正内容を説明してください
+原因：割り切れない数の計算結果出力されてしまったから
+原因箇所：  　　BigDecimal id1 = new BigDecimal(10);
+		BigDecimal id2 = new BigDecimal(3);
+		BigDecimal id3 = id1.divide(id2);
+修正内容：BigDecimal(10)→BigDecimal(9)
