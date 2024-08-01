@@ -34,9 +34,12 @@ model
 
 
 
-「view」→「controller」→「service」→「controller」→「service」→「dao」
-→「daoimpl」→「Entity」→「DB」→「Entity」→「daoimpl」
-→「serviceimpl」→「service」→「form」→「view」→「controller」→「view」
+「view」→「controller」→「form」→「controller」→「service」→「serviceimpl」
+→「dao」→「daoimpl」→「Entity」→「DB」→「Entity」
+→「daoimpl」→「dao」→「serviceimpl」→「service」→「controller」→「form」→「controller」→「view」
+
+
+
 
 
 ⑦各コンポーネントの責務を答えなさい。（Controller）
